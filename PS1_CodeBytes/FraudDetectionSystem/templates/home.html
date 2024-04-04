@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Project Business Analytics Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <header class="App-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            &#9776;
+        </button>
+        <div class="header-title">
+            <h2>Datathon</h2>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">
+            &times;
+        </button>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="side-bar-buttons">Home</a></li>
+            <li><a href="{{ url_for('dashboard') }}" class="side-bar-buttons">Dashbord</a></li>
+            <li><a href="{{ url_for('res1') }}" class="side-bar-buttons">Conclusion</a></li></ul>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        <div class="content-item2">
+            <h1>Problem Statement</h1>
+            <img class="img3" src="{{ url_for('static', filename='images/innovation.png') }}" alt="b" />
+
+            <p class="content-text">
+                Building and training fraud detection models involves two main approaches: supervised and unsupervised. In the supervised approach, predictive models like Random Forest and Neural Networks are developed using labeled data, enabling the model to learn patterns of fraudulent and legitimate transactions. Unsupervised approaches involve detecting anomalies in the data without prior labels. Both approaches aim to enhance fraud detection accuracy. Model evaluation and validation are crucial steps, measured through metrics like precision, recall, and F1-score, ensuring the model's ability to accurately identify fraud while minimizing false positives and false negatives
+            </p>
+            
+            
+
+        </div>
+
+        
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

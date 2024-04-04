@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Project Business Analytics Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="App-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            &#9776;
+        </button>
+        <div class="header-title">
+            <h2>Datathon</h2>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">
+            &times;
+        </button>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="side-bar-buttons">Home</a></li>
+            <li><a href="{{ url_for('dashboard') }}" class="side-bar-buttons">Dashbord</a></li>
+            <li><a href="{{ url_for('res1') }}" class="side-bar-buttons">Conclusion</a></li></ul>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        <div class="content-section">
+            <div class="content-item">
+                <h2>Operations Done</h2>
+                <p>
+                    We attempted to implement a number of models such as Random Forest, XGBoost, Bagging classifier, light GBM , Isolation forest and Nueral network. 
+                    After data cleaning, transformation and feature selection, we implemented these models and recorded various evaluation metrics for them. Based on these metrics we decided to move forward with only 4 models- nueral networks, lightGBM, XGBoost and Baggingclassifier.
+                </p>
+                <div class="olap-group-buttons">
+                    <form action="/op1"><button><a>XGBoost</a></button></form>
+                    <form action="/op2"><button><a>Isolation Forest</a></button></form>
+                    <form action="/op3"><button><a>Light GBM</a></button></form>
+                    <form action="/op4"><button><a>Nueral network</a></button></form>
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <div class="content-item">
+                <h2>Visualizations</h2>
+                <p>
+                    We implemented visualizations for each attribute to explore data, and identify trends.
+                    Initially we attempted to compare counts of fraudulent and non fraudulent transactions for each category of each attribute but due to the highly skewed nature of the dataset, the visualizations were difficult to understand and trends harder to interpret. So we decided to use a ratio of fraudulent transactions to total transactions in each category to simplify the visualizations.</p>
+                <div class="report-group-buttons">
+                    <form class="vis" action="/vis_board"><button>Visualizations</button></form>
+                    </div>
+            </div>
+
+           
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

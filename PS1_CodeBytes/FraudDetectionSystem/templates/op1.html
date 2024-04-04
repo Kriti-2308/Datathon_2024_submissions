@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Project Business Analytics Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <header class="App-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            &#9776;
+        </button>
+        <div class="header-title">
+            <h2>Datathon</h2>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">
+            &times;
+        </button>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="side-bar-buttons">Home</a></li>
+            <li><a href="{{ url_for('dashboard') }}" class="side-bar-buttons">Dashbord</a></li>
+            <li><a href="{{ url_for('res1') }}" class="side-bar-buttons">Conclusion</a></li></ul>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        
+        <div class="content-item2">
+            <h1>XGBoost</h1>
+            <p>
+                The evaluation metrics for the model were-
+               <p>Accuracy- 0.989</p> 
+               <p>Precision-0.209 </p> 
+               <p>Recall- 0.0029</p> 
+               <p>F1 score- 0.0057 </p> 
+               <p>ROC AUC score- 0.5014</p> 
+            </p>
+            <img class="img3" src="{{ url_for('static', filename='images/XGBoost.jpeg') }}" alt="b" />
+            
+        </div>
+
+        
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

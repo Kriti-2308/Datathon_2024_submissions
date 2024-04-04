@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Project Business Analytics Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <header class="App-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            &#9776;
+        </button>
+        <div class="header-title">
+            <h2>Datathon</h2>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">
+            &times;
+        </button>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="side-bar-buttons">Home Page</a></li>
+            <li><a href="{{ url_for('dataset') }}" class="side-bar-buttons">Information Regarding Dataset</a></li>
+            <li><a href="{{ url_for('schema') }}" class="side-bar-buttons">Star Schema Designed</a></li>
+            <li><a href="{{ url_for('etl') }}" class="side-bar-buttons">ETL process</a></li>
+            <li><a href="{{ url_for('dashboard') }}" class="side-bar-buttons">DashBoard For Results</a></li>
+            <li><a href="{{ url_for('working') }}" class="side-bar-buttons">Business Working</a></li>
+            <li><a href="{{ url_for('reports') }}" class="side-bar-buttons">Reports</a></li>
+            <li><a href="{{ url_for('overview') }}" class="side-bar-buttons">Overview</a></li>
+        </ul>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        
+
+        <div class="content-item2">
+            <h1>Overview</h1>
+
+            <div class="imgo"><img src="{{ url_for('static', filename='images/overview.jpg') }}" /></div>
+            <p class="content-text">
+                We sucessfully used Business Intelligence principles to extract data from our csv file and perform the necessary transformations
+                to load data into our data warehouse. We performed OLAP operations such as slicing, dicing, pivot, roll-up and drill-down to find ptterns between 
+                different attributes. We were also able to predict classes and values using ML algorithms like classification and regression and 
+                group similar restaurants together using clustering. Various visualizations were used to help interpret the relationship between data attributes. 
+                We also generated a complete report and customized reports compiling all the operations performed.
+            </p>
+        </div>
+
+      
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

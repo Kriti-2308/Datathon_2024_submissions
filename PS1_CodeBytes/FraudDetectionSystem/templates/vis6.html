@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Project Business Analytics Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <style>
+        
+        #tableauViz {
+            width: 100%; 
+            height: 1000px; 
+            margin-left:400px;
+            margin-top:30px; 
+        }
+    </style>
+</head>
+<body>
+    <header class="App-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            &#9776;
+        </button>
+        <div class="header-title">
+            <h2>Datathon</h2>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">
+            &times;
+        </button>
+        <ul>
+            <li><a href="{{ url_for('home') }}" class="side-bar-buttons">Home</a></li>
+            <li><a href="{{ url_for('dashboard') }}" class="side-bar-buttons">Dashbord</a></li>
+            <li><a href="{{ url_for('res1') }}" class="side-bar-buttons">Conclusion</a></li></ul>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        
+        <div class="content-item2">
+            <h1>Source</h1>
+            <div class="tableauViz" id="tableauViz"></div>
+            <div>
+                <p class="content-text">
+                    The ratio is slightly higher for teleapps but the difference might not be high enough to be helpful to the model </p>
+            </div>
+        </div>
+        
+
+        
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        function initViz() {
+          var containerDiv = document.getElementById("tableauViz");
+          var url = "https://public.tableau.com/views/Sourceratio/Dashboard3?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link"; // Replace with your Tableau workbook URL
+          var options = {
+            hideTabs: true,
+            onFirstInteractive: function () {
+              console.log("Tableau visualization is ready.");
+            },
+          };
+          var viz = new tableau.Viz(containerDiv, url, options);
+        }
+        initViz();
+      </script>
+      
+</body>
+</html>

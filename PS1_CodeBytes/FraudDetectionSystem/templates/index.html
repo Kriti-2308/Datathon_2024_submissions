@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Business Intelligence Project</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #222;
+            padding-top: 60px;
+            transition: 0.3s;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        /* Content styles */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* Button to open the sidebar */
+        .openbtn {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        /* Close button */
+        .closebtn {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            margin-left: 220px;
+            margin-top: 20px;
+        }
+
+        /* Add some color and style to the buttons */
+        .openbtn, .closebtn {
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>Your Business Intelligence Project</header>
+    
+    <!-- Open button to show the sidebar -->
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="mySidebar">
+        <button class="closebtn" onclick="closeNav()">×</button>
+        <a href="#">View Data</a>
+        <a href="#">ML Analysis</a>
+        <a href="#">Visualize Data</a>
+        <!-- Add more links as needed -->
+    </div>
+
+    <!-- Content area -->
+    <div class="content">
+        <!-- Your content will go here -->
+    </div>
+
+    <!-- JavaScript to open/close the sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").classList.add('active');
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").classList.remove('active');
+        }
+    </script>
+</body>
+</html>

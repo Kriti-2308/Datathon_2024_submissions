@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BI Project Business Analytics Tool</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <header class="App-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            &#9776;
+        </button>
+        <div class="header-title">
+            <h2>Datathon</h2>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar">
+            &times;
+        </button>
+        <ul>
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="side-bar-buttons">Home</a></li>
+                <li><a href="{{ url_for('dashboard') }}" class="side-bar-buttons">Dashbord</a></li>
+                <li><a href="{{ url_for('vis_board') }}" class="side-bar-buttons">Vis Board</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    <main class="main-content" id="mainContent">
+        
+        <div class="content-item2">
+            <h1>Trends Observed</h1>
+            <p>
+                
+            </p>
+        </div>
+
+        
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
